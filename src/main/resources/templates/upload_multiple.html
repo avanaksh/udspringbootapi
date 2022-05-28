@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Candidate Info</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Candidate Info</h1>
+        <br />
+        <form th:action="@{/submit}" method="post" th:object="${candidate}" enctype="multipart/form-data"> 
+          <div>   
+		    <label>First Name: </label>
+		        <input type="text" name="firstName" th:field="*{firstName} required />
+		    </div>
+            <div>   
+		    <label>Last Name: </label>
+		        <input type="text" name="lastName" th:field="*{lastName}  required />
+		    </div>
+		    <div>   
+		    <label>Profile Picture: </label>
+		        <input type="file" name="profilePictureFile" th:field="*{firstName} accept="image/png, image/jpeg" required />
+		    </div>
+		    <div>   
+		    <label>Photo ID: </label>
+		        <input type="file" name="photoIdFile" th:field="*{lastName} accept="image/png, image/jpeg" required />
+		    </div>
+		    <div>   
+		    <label>Document: </label>
+		        <input type="file" name="documentFile" required />
+		    </div>   
+		     <div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
